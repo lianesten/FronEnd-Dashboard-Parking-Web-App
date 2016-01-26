@@ -1,0 +1,37 @@
+	<h1 class="text-center">:::Buscar usuario:::</h1>
+
+	<form ng-submit="buscarUsuario()">
+		<div>
+			<label> Id Cliente: </label> <input type="text" required="required"
+				placeholder="Digite numero Id" ng-model="numeroIdCliente" />
+			<button class="btn btn-primary" value="BuscarCliente" type="submit">Buscar
+				Cliente</button>
+        <button class="btn btn-primary" ng-click="listarUsuarios()">Listar usuarios</button>
+		</div>
+	</form>
+	<hr size="2"/>
+	
+	
+	  <table class="table">
+    <thead>
+      <tr>
+      	<th>numeroId</th>
+        <th>nombres</th>
+        <th>apellidos</th>
+        <th>privilegio</th>
+        <th>username</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in listaUsuario">
+        <td>{{x.numeroId}}</td>
+        <td>{{x.nombres}}</td>
+        <td>{{x.apellidos}}</td>
+        <td>{{x.privilegio}}</td>
+        <td>{{x.username}}</td>
+        <td>{{x.email}}</td>
+      </tr>
+
+    </tbody>
+  </table>
